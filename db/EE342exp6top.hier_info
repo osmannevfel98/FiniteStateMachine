@@ -1,0 +1,30 @@
+|EE342exp6top
+Clk => Clk~0.IN1
+tDin[0] => tDin[0]~1.IN1
+tDin[1] => tDin[1]~0.IN1
+Cntr[0] <= EE342exp6FSM:FSM1.Cntr
+Cntr[1] <= EE342exp6FSM:FSM1.Cntr
+Cntr[2] <= EE342exp6FSM:FSM1.Cntr
+
+
+|EE342exp6top|EE342exp6FSM:FSM1
+Clk => State[3].CLK
+Clk => State[2].CLK
+Clk => State[1].CLK
+Clk => State[0].CLK
+Clk => Cntr[2]~reg0.CLK
+Clk => Cntr[1]~reg0.CLK
+Clk => Cntr[0]~reg0.CLK
+Din[0] => Equal0.IN0
+Din[0] => Equal1.IN1
+Din[0] => Equal2.IN0
+Din[0] => Equal3.IN0
+Din[1] => Equal0.IN1
+Din[1] => Equal1.IN0
+Din[1] => Equal2.IN1
+Din[1] => Equal3.IN1
+Cntr[0] <= Cntr[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Cntr[1] <= Cntr[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Cntr[2] <= Cntr[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
